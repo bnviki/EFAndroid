@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mpeers"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <!-- Allow to connect with internet and to know the current network state -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/pw"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo.Light.DarkActionBar" 
+        android:name="com.mpeers.MpeersApp">
+        <activity
+            android:name="Login"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="Register"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="Registered"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="Main"
+            android:label="mPeers" >
+        </activity>
+         <activity
+            android:name="ChatWindow"
+            android:label="chat with user" 
+            android:windowSoftInputMode="stateUnchanged">
+        </activity>
+         <activity
+            android:name="Settings"
+            android:label="settings" >
+        </activity>
+        <activity
+            android:name="ChatList"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="PasswordReset"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="ChangePassword"
+            android:label="@string/app_name" >
+        </activity>
+
+        <service android:name="com.mpeers.service.ConnectionManager" />
+        <service android:name="com.mpeers.service.ChatMessageWriter" />
+    </application>
+
+</manifest>
